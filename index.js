@@ -23,6 +23,9 @@ var colors = document.getElementById("colors");
 var umbrella = document.getElementById("umbrella_img");
 var loading = document.getElementById("loading");
 
+
+
+// mapping the umbrella images  and changing the color 
 data.map((item, i) => {
     let div = document.createElement('div');
     div.style.backgroundColor = item.color;
@@ -42,27 +45,26 @@ data.map((item, i) => {
 
 })
 
-const changeColor = (para) => {
-    cconsole.log(para)
-
-}
 
 
 
-// uploading file
+// uploading file ///
 var imageInput = document.getElementById("fileUpload");
 var brandImage = document.getElementById("brandImage");
 
+// onchange if of the input
 imageInput.addEventListener("change", () => {
 
-    var uploadedFile = event.target.files[0];
+    var uploadedFile = event.target.files[0]; // input value from the file upload
 
-    var reader = new FileReader()
+
+
+    var reader = new FileReader()      // setting up  file reader on load event
     reader.onload = () => {
         brandImage.src = reader.result;
         brandImage.style.display = "block"
     }
 
-    reader.readAsDataURL(uploadedFile)
+    reader.readAsDataURL(uploadedFile)           // reading the file as data url
 })
 
